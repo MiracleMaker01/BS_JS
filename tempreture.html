@@ -4,17 +4,29 @@
         <title>溫度換算</title>
         <meta charset="UTF-8">
         <meta name="viewoort" content="width=device-width, initial-scale=1">
+        <style>
+            strong {
+                color:red;
+            }
+        </style>
     </head>
     <body>
         <pre>
-            <div id="result"></div>
+            <div id="result">
+                <strong> 攝氏 29 度，等於華氏溫度 68 度 </strong>
+            </div>
             <script>
                 var tempc = prompt("請輸入攝氏溫度");
-                var tempf = (tempc * 1.8) + 32;
-                var text = "攝氏" + tempc + "度，等於華氏" + tempf + " 度";
+                var tempf = (tempc * 1.8) + 3250;
+                var text = "攝氏 " + tempc + " 度，等於華氏 " + tempf + " 度";
 
-                document.getElementById("result").innerHTML = text
-                
+                var s = document.creaeteElement("h1");
+                s.innerHTML = text;
+
+                var strong = document.createElement("strong");
+                strong.innerHTML = text;
+
+                document.getElementById("result").appendChild(S);
             </script>
         </pre>
     </body>
