@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>猜大小 1 ~ 100</title>
+    <meta charset="UTF-8" />
+    <meta name="viewoort" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <script>
+      document.writeln("猜數字 1 ~ 100");
+      var num = prompt("請輸入一個數字: ");
+      var random_number = Math.floor(Math.random() * 100);
+      var judge = true;
+      var count = 0;
+      while (judge) {
+        ++count;
+        if (num < 0 || num > 100) {
+          alert("你輸入的值不再許可範圍內，請重新輸入!!");
+          var num = prompt("請輸入一個數字: ");
+        } else if (num == random_number) {
+          judge = false;
+          document.writeln("你在第 " + count + "次時輸入: " + num);
+          break;
+        } else if (num > random_number) {
+          alert(num + "再小一點");
+          document.writeln("你在第 " + count + "次時輸入: " + num);
+          var num = prompt("請輸入一個數字: ");
+        } else if (num < random_number) {
+          alert(num + "再大一點");
+          document.writeln("你在第 " + count + "次時輸入: " + num);
+          var num = prompt("請輸入一個數字: ");
+        }
+      }
+      document.writeln(
+        "這次猜數字的答案是: " + random_number + "恭喜你猜對了!!"
+      );
+    </script>
+  </body>
+</html>
